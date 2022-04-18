@@ -5,8 +5,10 @@ const useTheme = () => {
 
     const ThemeSwitcher = (mode) => {
         if (mode === 'light') {
+            localStorage.setItem('theme', 'dark');
             setTheme('dark')
         } else {
+            localStorage.setItem('theme', 'light');
             setTheme('light')
         }
         
