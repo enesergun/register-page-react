@@ -11,10 +11,12 @@ let validatonElements = [{
     confirmPassword: {type: "password", name: "confirmPassword", required: "required", placeholder:"Şifreni doğrula.", innerText: "ŞİFRENİ TEKRAR GİR"}
 }]
 
-console.log(validatonElements[0]["email"].placeholder)
 
 
-const FormValidation = ({values, theme, handleChange, errors, }) => {
+/* console.log(Object.keys(validatonElements[0]).map((item, index) => console.log(validatonElements[0][item].innerText))) */
+
+
+const FormValidation = ({values, theme, handleChange, errors, touched, handleBlur  }) => {
 
     return (
         <>
@@ -26,9 +28,9 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         name="name"
                         placeholder='İsminizi giriniz'
                         value={values.name}
-                        onChange={handleChange}
+                        onChange={handleChange}                    
                     />
-                     <span className="error">{touched.name && errors.name}</span>
+                    <span className="error">{touched.name && errors.name}</span>
             </div>
 
             <div className="formElement surname">
@@ -38,7 +40,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         name="surname"
                         placeholder='Soyisminizi giriniz'
                         value={values.surname}
-                        onChange={handleChange}
+                        onChange={handleChange}                        
                     />
                     <span className="error">{touched.surname && errors.username}</span>
             </div>
@@ -46,12 +48,12 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
         {/* {
             Object.keys(validatonElements[0]).map((item, index) => (
                 <div className='formGroup' key={index}>
-                    <div className={`formElement ${validatonElements[0][`${item}`].name}`}>
-                    <label className={theme === 'light' ? `${validatonElements[0][`${item}`].required} title` : `${validatonElements[0][`${item}`].required} title titleDark`}>{validatonElements[0][`${item}`].placeholder}</label>
+                    <div className={`formElement ${validatonElements[0][item].name}`}>
+                    <label className={theme === 'light' ? `${validatonElements[0][item].required} title` : `${validatonElements[0][item].required} title titleDark`}>{validatonElements[0][item].placeholder}</label>
                     <input
-                        type={validatonElements[0][`${item}`].type}
-                        name={validatonElements[0][`${item}`].name}
-                        placeholder={validatonElements[0][`${item}`].placeholder}
+                        type={validatonElements[0][item].type}
+                        name={validatonElements[0][item].name}
+                        placeholder={validatonElements[0][item].placeholder}
                         value={values.email}
                         onChange={handleChange}                        
                         />
@@ -72,7 +74,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         />
-                        <span className="error">{touched.email && errors.email}</span>                      
+                        <span className="error">{touched.email && errors.email}</span>
                     </div>
                   </div>
                   <div className={'formGroup'}>
@@ -86,7 +88,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       />
-                    <span className="error">{touched.username && errors.username} </span>  
+                    <span className="error">{touched.username && errors.username} </span>
                     </div>
                   </div>
 
@@ -101,7 +103,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       />
-                    <span className="error">{touched.password && errors.password}</span>   
+                    <span className="error">{touched.password && errors.password}</span>
                     </div>
                   </div>
 
@@ -116,7 +118,9 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       />
-                    <span className='error'>{touched.confirmPassword && errors.confirmPassword}</span>   
+                    
+                      <span className='error'>{touched.confirmPassword && errors.confirmPassword}</span>
+                    
                     </div>
                   </div>
 
