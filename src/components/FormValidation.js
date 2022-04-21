@@ -28,7 +28,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         value={values.name}
                         onChange={handleChange}
                     />
-                    {errors.name && <div className='error'>{errors.name}</div>}
+                     <span className="error">{touched.name && errors.name}</span>
             </div>
 
             <div className="formElement surname">
@@ -40,7 +40,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         value={values.surname}
                         onChange={handleChange}
                     />
-                    {errors.surname && <div className='error'>{errors.surname}</div>}
+                    <span className="error">{touched.surname && errors.username}</span>
             </div>
         </div>
         {/* {
@@ -71,7 +71,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                         value={values.email}
                         onChange={handleChange}                        
                         />
-                        {errors.email && <span className='error'>{errors.email}</span>}                      
+                        <span className="error">{touched.email && errors.email}</span>                      
                     </div>
                   </div>
                   <div className={'formGroup'}>
@@ -84,7 +84,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       value={values.username}
                       onChange={handleChange}
                       />
-                    {errors.username && <span className='error'>{errors.username}</span>}   
+                    <span className="error">{touched.username && errors.username} </span>  
                     </div>
                   </div>
 
@@ -98,7 +98,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       value={values.password}
                       onChange={handleChange}
                       />
-                    {errors.password && <span className='error'>{errors.password}</span>}   
+                    <span className="error">{touched.password && errors.password}</span>   
                     </div>
                   </div>
 
@@ -112,7 +112,7 @@ const FormValidation = ({values, theme, handleChange, errors, }) => {
                       value={values.confirmPassword}
                       onChange={handleChange}
                       />
-                    {errors.confirmPassword && <span className='error'>{errors.confirmPassword}</span>}   
+                    <span className='error'>{touched.confirmPassword && errors.confirmPassword}</span>   
                     </div>
                   </div>
 
