@@ -24,6 +24,7 @@ function Register() {
     }, 2000)
   }
 
+  console.log(theme)
     
   return (
     <div className={theme === 'light' ? "register" : "register registerDark"}>
