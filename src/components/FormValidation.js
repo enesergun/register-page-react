@@ -1,19 +1,5 @@
 import React from 'react'
-import { RegisterSchema } from '../constants/yupSchema';
-import { Formik } from 'formik';
 
-let validatonElements = [{
-    /* {name : {type : text, name: "name", placeholder : 'İsminizi giriniz.'}},
-    {surname: {type: text, name: "surname", placeholder: "Soyisminizi giriniz."}}, */
-    email : {type: "email", name: "email", required: "required", placeholder: "Eposta adresinizi giriniz", innerText: "E-POSTA"},
-    username: {type: "text", name: "username", required: "required", placeholder: "Kullanıcı adınızı giriniz", innerText: "KULLANICI ADI"},
-    password: {type: "password", name: "password", required: "required", placeholder:"Şifrenizi gir.", innerText: "ŞİFRE"},
-    confirmPassword: {type: "password", name: "confirmPassword", required: "required", placeholder:"Şifreni doğrula.", innerText: "ŞİFRENİ TEKRAR GİR"}
-}]
-
-
-
-/* console.log(Object.keys(validatonElements[0]).map((item, index) => console.log(validatonElements[0][item].innerText))) */
 
 
 const FormValidation = ({values, theme, handleChange, errors, touched, handleBlur  }) => {

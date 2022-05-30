@@ -169,12 +169,22 @@ body {
     .title {
       font-size: 18px;
     }
-  }
+  }   
+`
+
+export default GlobalStyles
+
+
+
+
+
+
+
+
+
+/* 
   
-  /* DARK THEME */
-  
-  .registerDark {
-    /* display: flex; */ 
+  .registerDark {    
     background-color: #2C2C2C; 
   }
   
@@ -190,7 +200,4 @@ body {
   
   .RegisterButtonDark {
     background-color: rgba(255, 191, 94, 1);
-  }
-`
-
-export default GlobalStyles
+  } */
