@@ -1,8 +1,10 @@
-import './App.css';
+import GlobalStyles from './components/styles/Global';
 import Register from './pages/Register'
+
 function App() {
   return (
     <>
+      <GlobalStyles />
       <Register />
     </>
   );

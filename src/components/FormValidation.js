@@ -45,23 +45,7 @@ const FormValidation = ({values, theme, handleChange, errors, touched, handleBlu
                     <span className="error">{touched.surname && errors.username}</span>
             </div>
         </div>
-        {/* {
-            Object.keys(validatonElements[0]).map((item, index) => (
-                <div className='formGroup' key={index}>
-                    <div className={`formElement ${validatonElements[0][item].name}`}>
-                    <label className={theme === 'light' ? `${validatonElements[0][item].required} title` : `${validatonElements[0][item].required} title titleDark`}>{validatonElements[0][item].placeholder}</label>
-                    <input
-                        type={validatonElements[0][item].type}
-                        name={validatonElements[0][item].name}
-                        placeholder={validatonElements[0][item].placeholder}
-                        value={values.email}
-                        onChange={handleChange}                        
-                        />
-                        {errors[item] && <span className='error'>{errors[item]}</span>}     
-                    </div>
-                </div>
-            ))
-        } */}
+      
                   
                   <div className={'formGroup'}>
                     <div className="formElement email">
